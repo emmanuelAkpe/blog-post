@@ -3,16 +3,19 @@ import mongoose from "mongoose";
 const postSchema = new mongoose.Schema(
   {
     title: {
-      String,
-      required: [true, "please enter a title"],
+      type: String,
+      required: true,
     },
     content: {
       type: String,
-      required: [true, "please enter a content"],
+      required: true,
     },
-    publishedDate: Date,
+
+    publisehedDate: Date,
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 export default mongoose.models.Post || mongoose.model("Post", postSchema);
